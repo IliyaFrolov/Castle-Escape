@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1> {{ room.name }} </h1>
+<pre>
+{{ room.description }}
+</pre>
+
+<form action="" method="POST" novalidate>
+    <div>
+        {{ form.hidden_tag() }}
+
+        {{ form.player_input(class='input_box') }}
+         
+        {% for error in form.player_input.errors %}
+            <span style='border: solid; background: black; color: white'>{{ error }}</span>
+        {% endfor %} 
+        
+        {% with messages=get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <span style='border: solid; background: black; color: white'>{{ message }}</span>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <br>
+        <br>
+        {{ form.submit(class='button') }}
+    </div>
+</form>
+
+{% endblock %}
