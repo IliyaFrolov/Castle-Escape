@@ -1,2 +1,2 @@
 FLASK_ENV=development
-FLASK_APP=gothonweb.py
+FLASK_APP='castle escape.py'

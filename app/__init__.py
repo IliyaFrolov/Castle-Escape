@@ -1,9 +1,9 @@
 from flask import Flask, session, redirect, url_for, request, flash, render_template
-from gothonweb import planisphere
+from app import planisphere
 from flask_wtf import FlaskForm
 from wtforms import SubmitField, StringField
 from wtforms.validators import DataRequired
-from gothonweb.parser import parse_sentence, scan
+from app.parser import parse_sentence, scan
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'this_is_the_key'
