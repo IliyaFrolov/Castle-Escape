@@ -25,17 +25,16 @@ def name_room(room):
         if value == room:
             return key
 
-def set_error(room_name):
-    if room_name == 'Main Entrance':
-        error = 'Not a valid input!'
-
-    elif room_name == 'The Hall':
-        error = 'Not a valid input!'
+def set_error(room_name, player_input):
+    if room_name == 'The Vault':
+        
+        if isinstance(player_input, int):
+            error = 'BZZZZZZZZZD!'
+        
+        else:
+            error = 'Not a valid input!'
     
-    elif room_name == 'The Vault':
-        error = 'BZZZZZZZZZD!'
-    
-    elif room_name == 'Second Floor':
+    else:
         error = 'Not a valid input!'
     
     return error

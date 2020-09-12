@@ -27,7 +27,7 @@ def game():
     if form.validate_on_submit():
         player_input = parse_sentence(scan(form.player_input.data))
         next_room = room.go(f'{player_input}')
-        error = planisphere.set_error(room_name)
+        error = planisphere.set_error(room_name, player_input)
         
         if next_room == room.death:
             return render_template("you_died.html", room=next_room)
