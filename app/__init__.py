@@ -4,6 +4,7 @@ from flask_wtf import FlaskForm
 from wtforms import SubmitField, StringField
 from wtforms.validators import DataRequired
 from app.parser import parse_sentence, scan
+from app.planisphere import Room
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'this_is_the_key'
@@ -20,14 +21,14 @@ def index():
 @app.route("/game", methods=['GET', 'POST'])
 def game():
     room_name = session.get('room_name')
-    room = planisphere.load_room(room_name)
+    room = Room.room_list.get(room_name)
     form = Input()
     
     if form.validate_on_submit():
         player_input = parse_sentence(scan(form.player_input.data))
         next_room = room.go(f'{player_input}')
         error = planisphere.set_error(room_name)
-        print(player_input)
+        
         if next_room == room.death:
             return render_template("you_died.html", room=next_room)
         
@@ -46,6 +47,8 @@ def game():
             return render_template("show_room.html", room=room, form=form)
     
     return render_template("show_room.html", room=room, form=form)
+
+
 
 
 

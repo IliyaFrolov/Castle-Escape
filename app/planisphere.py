@@ -2,13 +2,17 @@ from random import randint
 
 class Room(): 
 
+    room_list = {}
+
     def __init__(self, name, description):
         self.name = name
         self.description = description
         self.paths = {}
+
+        Room.room_list.update({name: self})
     
     def dead(self, death_scene):
-        self.death = Room('death', death_scene)
+        self.death = Room('Death', death_scene)
 
     def go(self, direction):
         return self.paths.get(direction)
@@ -16,38 +20,27 @@ class Room():
     def add_paths(self, paths):
         self.paths.update(paths)
     
-def load_room(name):
-    """
-    There is a potential security problem here. 
-    Who gets to set name? Can that expose a variable?
-    """
-    return globals().get(name)
-
-def name_room(room):
-    """
-    Same possible security probelm. Can you trust the room?
-    What's better solution than this globals lookup?
-    """
-    for key, value in globals().items():
+def name_room(room): 
+    for key, value in Room.room_list.items():
         if value == room:
             return key
 
 def set_error(room_name):
-    if room_name == 'main_entrance':
+    if room_name == 'Main Entrance':
         error = 'Not a valid input!'
 
-    elif room_name == 'the_hall':
+    elif room_name == 'The Hall':
         error = 'Not a valid input!'
     
-    elif room_name == 'the_vault':
+    elif room_name == 'The Vault':
         error = 'BZZZZZZZZZD!'
     
-    elif room_name == 'second_floor':
+    elif room_name == 'Second Floor':
         error = 'Not a valid input!'
     
     return error
         
-main_entrance = Room("Entrance",
+main_entrance = Room("Main Entrance",
 """
 You arrive at a castle. The gate is suspended open, with a door seemingly leading
 inside. To the side of the door is a lever, which upon first glance, doesnt seem 
@@ -55,21 +48,21 @@ to be connected to anything.
 """)
 main_entrance.dead("""The gate suddenly drops and impales you, good job...""")
 
-the_hall = Room("Main hall",
+the_hall = Room("The Hall",
 """
 Upon entering the hall, you see a big door to your west, a trap door nearby and a staricase 
 leading up.
 """)
 the_hall.dead("""You fall through the trapdoor, which has spikes beneath, good job...""")
 
-the_vault = Room("Big door with keypad",
+the_vault = Room("The Vault",
 """
 The door has a keypad to the side, requiring a 3 digit passcode.
 """)
 the_vault.dead("""After many wrong tries, the keypad blows up and you die, good job...""")
 code = f"{randint(0, 9)}{randint(0, 9)}{randint(0, 9)}"
 
-second_floor = Room("Second floor",
+second_floor = Room("Second Floor",
 """
 The staircase leads to a small dark room, with a tiny note laying in the corner. 
 """)
@@ -126,6 +119,7 @@ main_entrance.add_paths({
     'skip': the_hall
 })
 
-START = 'main_entrance'
+START = 'Main Entrance'
 
 
+print(Room.room_list)
