@@ -89,8 +89,12 @@ second_floor.add_paths({
     'i go downstairs': the_hall,
     'i go down': the_hall,
     'i go back': the_hall,
+    'i go hall': the_hall,
+    'i grab note': code,
     'i look note': code,
-    'i take note': code  
+    'i get note': code,
+    'i take note': code,  
+    'i read note': code
 })
 
 the_hall.add_paths({
@@ -117,6 +121,8 @@ the_vault.add_paths({
 main_entrance.add_paths({
     'i pull lever': main_entrance.death,
     'i go door': the_hall,
+    'i open door': the_hall,
+    'i go inside': the_hall,
     'skip': the_hall
 })
 
