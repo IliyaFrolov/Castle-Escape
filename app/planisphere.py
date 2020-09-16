@@ -121,4 +121,3 @@ main_entrance.add_paths({
 START = 'Main Entrance'
 
 
-print(Room.room_list)

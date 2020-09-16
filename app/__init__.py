@@ -5,9 +5,14 @@ from wtforms import SubmitField, StringField
 from wtforms.validators import DataRequired
 from app.parser import parse_sentence, scan
 from app.planisphere import Room
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate  
+from config import Config
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'this_is_the_key'
+app.config.from_object(Config)
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 class Input(FlaskForm):
     player_input = StringField(validators=[DataRequired()])
