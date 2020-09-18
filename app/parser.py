@@ -98,8 +98,8 @@ def scan(words):
         'down', 'downstairs', 'upstairs', 'up', 'north', 
         'west', 'back', 'south', 'east'
     ]
-    verbs = ['go', 'open', 'look', 'pull', 'take', 'grab', 'get', 'read', 'climb', 'up']
-    stop_words = ['the', 'in', 'through', 'at', 'it', 'to', 'big', 'main']
+    verbs = ['go', 'open', 'look', 'pull', 'take', 'grab', 'get', 'read', 'climb']
+    stop_words = ['the', 'in', 'through', 'at', 'it', 'to', 'big', 'main', 'up']
     nouns = ['door', 'trapdoor', 'lever', 'note', 'i', 'hall', 'inside']
     numbers = [f'{i}' for i in range(0, 10)]
 
