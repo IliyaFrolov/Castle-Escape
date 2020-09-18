@@ -87,7 +87,7 @@ second_floor.add_paths({
     'i get note': code,
     'i take note': code,  
     'i read note': code,
-    'i pick note': code
+    'i pick up': code
 })
 
 the_hall.add_paths({
