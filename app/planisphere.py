@@ -49,7 +49,7 @@ main_entrance.dead("""The gate suddenly drops and impales you, good job...""")
 
 the_hall = Room("The Hall",
 """
-Upon entering the hall, you see a big door to your west, a trapdoor nearby and a staricase 
+Upon entering the hall, you see a big door to your west, a trapdoor nearby and a staircase 
 leading up.
 """)
 the_hall.dead("""You fall through the trapdoor, which has spikes beneath, good job...""")
