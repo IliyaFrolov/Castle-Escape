@@ -4,4 +4,4 @@ from wtforms.validators import DataRequired
 
 class Input(FlaskForm):
     player_input = StringField(validators=[DataRequired()])
-    submit = SubmitField()
+    submit = SubmitField('Enter')

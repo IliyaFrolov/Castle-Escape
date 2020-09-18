@@ -49,7 +49,7 @@ main_entrance.dead("""The gate suddenly drops and impales you, good job...""")
 
 the_hall = Room("The Hall",
 """
-Upon entering the hall, you see a big door to your west, a trap door nearby and a staricase 
+Upon entering the hall, you see a big door to your west, a trapdoor nearby and a staricase 
 leading up.
 """)
 the_hall.dead("""You fall through the trapdoor, which has spikes beneath, good job...""")
@@ -92,6 +92,8 @@ second_floor.add_paths({
 the_hall.add_paths({
     'i open trapdoor': the_hall.death,
     'i go trapdoor': the_hall.death,
+    'i climb stairs': second_floor,
+    'i go stairs': second_floor, 
     'i go upstairs': second_floor,
     'i go up': second_floor,
     'i go north': second_floor, 
