@@ -96,6 +96,7 @@ the_hall.add_paths({
     'i go north': second_floor, 
     'i go west': the_vault,
     'i go door': the_vault,
+    'i go vault': the_vault,
     'i go back': main_entrance,
     'i go south': main_entrance,
     'skip': second_floor
@@ -114,7 +115,8 @@ main_entrance.add_paths({
     'i go door': the_hall,
     'i open door': the_hall,
     'i go inside': the_hall,
-    'skip': the_hall
+    'i enter door': the_hall,
+    'i enter': the_hall 
 })
 
 START = 'Main Entrance'
