@@ -70,7 +70,8 @@ You die...
 
 the_end = Room("The End",
 """
-As the vault creaks open, you catch a glimpse of a faint shimmer of blue. You soon realise you are at one end of a portal, with the other end but a mystery. 
+As the vault creaks open, you catch a glimpse of a faint shimmer of blue. 
+You soon realise you are at one end of a portal, with the other end but a mystery. 
 Your curiosity gets the better of you and you leap inside...
 (to be continued)
 """)
