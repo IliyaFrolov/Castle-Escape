@@ -1,7 +1,7 @@
 from app import planisphere, app
 from app.parser import parse_sentence, scan
 from app.planisphere import Room
-from flask import session, redirect, url_for, request, flash, render_template
+from flask import session, redirect, url_for, flash, render_template
 from app.forms import Input 
 
 @app.route('/')
