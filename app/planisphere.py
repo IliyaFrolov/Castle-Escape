@@ -41,7 +41,8 @@ def set_error(room_name, player_input):
         
 main_entrance = Room("Main Entrance",
 """
-You arrive at an ancient castle. You stand underneath a raised iron gate, with a wooden door towering above you, beckoning you in. To the side of the door is a lever, which upon first glance doesnt seem to be connected to anything.     
+You arrive at an ancient castle. You stand underneath a raised iron gate, with a wooden door towering above you, beckoning you in. 
+To the side of the door is a lever, which upon first glance doesnt seem to be connected to anything.     
 """)
 main_entrance.dead("""The gate is suddenly released and impales you, good job...""")
 
@@ -69,7 +70,8 @@ You die...
 
 the_end = Room("The End",
 """
-As the vault creaks open, you catch a glimpse of a faint shimmer of blue. You soon realise you are at one end of a portal, with the other end but a mystery. Your curiosity gets the better of you and you leap inside...
+As the vault creaks open, you catch a glimpse of a faint shimmer of blue. You soon realise you are at one end of a portal, with the other end but a mystery. 
+Your curiosity gets the better of you and you leap inside...
 (to be continued)
 """)
 
