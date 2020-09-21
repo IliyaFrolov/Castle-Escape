@@ -41,39 +41,35 @@ def set_error(room_name, player_input):
         
 main_entrance = Room("Main Entrance",
 """
-You arrive at a castle. The gate is suspended open, with a door seemingly leading
-inside. To the side of the door is a lever, which upon first glance, doesnt seem 
-to be connected to anything.     
+You arrive at an ancient castle. You stand underneath a raised iron gate, with a wooden door towering above you, beckoning you in. To the side of the door is a lever, which upon first glance doesnt seem to be connected to anything.     
 """)
-main_entrance.dead("""The gate suddenly drops and impales you, good job...""")
+main_entrance.dead("""The gate is suddenly released and impales you, good job...""")
 
 the_hall = Room("The Hall",
 """
-Upon entering the hall, you see a big door to your west, a trapdoor nearby and a staircase 
-leading up.
+Upon entering the hall, you see a large rusted door to your west, a trapdoor by your feet and a staircase leading up.
 """)
-the_hall.dead("""You fall through the trapdoor, which has spikes beneath, good job...""")
+the_hall.dead("""You fall through the trapdoor onto a bed of sharp iron spikes, good job...""")
 
 the_vault = Room("The Vault",
 """
-The door has a keypad to the side, requiring a 3 digit passcode.
+As you approach the door, you realise it is a vault opening with a keypad sealing it shut. Faint blinking lights indicate a 3-digit passcode is required.
 """)
-the_vault.dead("""After many wrong tries, the keypad blows up and you die, good job...""")
+the_vault.dead("""After too many erroneous attempts, the keypad blows up and kills you, good job...""")
 code = f"{randint(0, 9)}{randint(0, 9)}{randint(0, 9)}"
 
 second_floor = Room("Second Floor",
 """
-The staircase leads to a small dark room, with a tiny note laying in the corner. 
+The staircase leads up to a small, dusty room, where you notice a fragment of a note lying in the corner. 
 """)
 
 second_floor.dead("""
-You die
+You die...
 """)
 
 the_end = Room("The End",
 """
-As you open the vault, you see a faint shimmer of blue. Within the vault is a portal,
-unknown where it leads to. Your curiosity gets the best of you and you jump inside...
+As the vault creaks open, you catch a glimpse of a faint shimmer of blue. You soon realise you are at one end of a portal, with the other end but a mystery. Your curiosity gets the better of you and you leap inside...
 (to be continued)
 """)
 
