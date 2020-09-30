@@ -54,7 +54,8 @@ the_hall.dead("""You fall through the trapdoor onto a bed of sharp iron spikes, 
 
 the_vault = Room("The Vault",
 """
-As you approach the door, you realise it is a vault opening with a keypad sealing it shut. Faint blinking lights indicate a 3-digit passcode is required.
+As you approach the door, you realise it is a vault opening with a keypad sealing it shut. 
+Faint blinking lights indicate a 3-digit passcode is required.
 """)
 the_vault.dead("""After too many erroneous attempts, the keypad blows up and kills you, good job...""")
 code = f"{randint(0, 9)}{randint(0, 9)}{randint(0, 9)}"
@@ -119,7 +120,8 @@ main_entrance.add_paths({
     'i open door': the_hall,
     'i go inside': the_hall,
     'i enter door': the_hall,
-    'i enter': the_hall 
+    'i enter': the_hall,
+    'i walk door': the_hall 
 })
 
 START = 'Main Entrance'

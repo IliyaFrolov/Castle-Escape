@@ -1,0 +1,27 @@
+{% extends "layout.html"%}
+
+{% block content %}
+
+<h1>Welcome to Castle Escape!</h1>
+
+<pre>
+    Intructions 
+    This is a text adventure game, whereby your objective is to escape the Castle
+    by progressing through each room. In order to advance, you must type an action
+    you would like to take by typing into the input box on the page, an action looks
+    like this: 'I open the door'. Each room has multiple actions and inputs you can 
+    enter, it is up to you to experiment to see what works and what doesn't. Good luck!
+</pre>
+
+<div class="navigation">
+    <a href="{{ url_for('play') }}">Play</a><br>
+    {% if current_user.is_anonymous %}
+    <a href="{{ url_for('login') }}">Login</a><br>
+    New user? <a href="{{ url_for('register')}}">Register</a>
+    {% else %}
+    <a href="{{ url_for('logout') }}">Logout</a><br>
+    {% endif %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<p class="home"><a href="{{ url_for('welcome') }}">Home</a></p>
+
+<div class="navigation">
+    <form method="POST" novalidate>
+    {{ form.hidden_tag() }}
+
+    {{ form.username.label }} <br>
+    {{ form.username() }}
+    {% for error in form.username.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    <br>
+    {{ form.password.label }} <br>
+    {{ form.password() }}
+    {% for error in form.password.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    <br>
+    {{ form.password2.label }} <br>
+    {{ form.password2() }}
+    {% for error in form.password2.errors %}
+    <br>
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    <br>
+    {{ form.submit() }}
+    </form>
+    
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    {{ message }}
+
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% endblock %}
+</div>

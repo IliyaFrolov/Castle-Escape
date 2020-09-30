@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<p class="home"><a href="{{ url_for('welcome') }}">Home</a></p>
+
 <h1> 
     {{ room.name }} 
 </h1>
@@ -30,7 +32,7 @@
 
     {% endwith %}
     <br>
-    {{ form.submit(class='button') }}
+    {{ form.enter(class='button') }}
     
 </form>
 
